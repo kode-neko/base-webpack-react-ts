@@ -20,7 +20,11 @@ const config: Configuration = {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         loader: "file-loader",
         options: {
-          name: "[name].[ext]",
+          name: (): string => {
+            if (process.env.NODE_ENV === "development")
+              return "[path][name].[ext]";
+            return "[contenthash].[ext]";
+          },
           outputPath: "fonts/",
         },
       },
@@ -33,11 +37,21 @@ const config: Configuration = {
               return "[path][name].[ext]";
             return "[contenthash].[ext]";
           },
+          outputPath: "imgs/",
         },
       },
       {
         test: /\.(sass|scss|css)$/i,
-        use: [MiniCSSExtractPluging.loader, "css-loader", "sass-loader"],
+        use: [
+          MiniCSSExtractPluging.loader,
+          {
+            loader: "css-loader",
+            options: {
+              modules: true,
+            },
+          },
+          "sass-loader",
+        ],
       },
       {
         test: /\.(js|ts|tsx|jsx)?$/i,

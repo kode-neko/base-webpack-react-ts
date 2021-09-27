@@ -12,10 +12,14 @@ const config: Configuration = {
   module: {
     rules: [
       {
-        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
         loader: "file-loader",
         options: {
-          name: "[name].[ext]",
+          name: (): string => {
+            if (process.env.NODE_ENV === "development")
+              return "[path][name].[ext]";
+            return "[contenthash].[ext]";
+          },
           outputPath: "fonts/",
         },
       },

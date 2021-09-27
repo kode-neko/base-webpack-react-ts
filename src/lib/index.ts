@@ -1,0 +1,1 @@
+export { patata } from "./patata";
