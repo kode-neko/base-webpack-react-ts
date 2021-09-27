@@ -16,8 +16,9 @@
   },
   "keywords": [
     "react",
-    "carousel",
-    "kode-neko"
+    "base",
+    "kode-neko",
+    "clean"
   ],
   "scripts": {
     "dev": "webpack serve --config webpack.dev.config.ts",
