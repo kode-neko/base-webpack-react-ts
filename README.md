@@ -49,11 +49,12 @@ git clone https://github.com/kode-neko/kodeneko-webpack-react-ts.git
 
 ## How to compile and upload
 
-* ```check the package.json file```: Very important filling properly the attrs repository, version and name.
-* ```push your change into the repository```: Commit and pushing the code.
-* ```npm version minor|major|patch```: Upload the project version. You cannot upload twice the same version to npm.
-* ```yarn run dist```: This make the dist folder, transform the src/lib code and put it in dist.
-* ```npm upload```: Before all make sure that you have a NPM account. Only takes 1 minute to complete it. 
+- `check the package.json file`: Very important filling properly the attrs repository, version and name.
+- `push your change into the repository`: Commit and pushing the code.
+- `npm version minor|major|patch`: Upload the project version. You cannot upload twice the same version to npm.
+- `yarn run dist`: This make the dist folder, transform the src/lib code and put it in dist.
+- `npm upload`: Before all make sure that you have a NPM account. Only takes 1 minute to complete it.
+
 ## Contributions
 
 Here a list of possible contributions
